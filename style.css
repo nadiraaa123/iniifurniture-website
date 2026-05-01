@@ -500,10 +500,11 @@ body {
     background: #0f0f0f; 
 }
 
-.cards { 
-    display: grid; 
-    grid-template-columns: 1fr; 
-    gap: 30px; 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: center; /* INI KUNCINYA */
+    gap: 30px;
 }
 
 @media (min-width: 576px) {
@@ -571,6 +572,10 @@ body {
     gap: 10px;
     color: var(--gold-soft);
 }
+
+
+
+
 
 /* PROCESS SECTION */
 .process {
