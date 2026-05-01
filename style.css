@@ -1114,29 +1114,37 @@ body {
     transform: scale(1.02);
 }
 
+.portfolio .sub-title,
+.portfolio .section-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* TESTIMONIALS */
 .testimonials { 
     background: #080808; 
 }
 
 .testimonial-grid { 
-    display: grid; 
-    grid-template-columns: 1fr; 
-    gap: 40px; 
-    align-items: center; 
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
 }
 
 @media (min-width: 992px) {
     .testimonial-grid { 
-        grid-template-columns: 1.2fr 1fr; 
-        gap: 50px; 
+        grid-template-columns: 1fr; 
+        justify-items: center;
+ 
     }
 }
 
 .video-container { 
     position: relative; 
     border-radius: 12px; 
-    border: 2px solid var(--gold); 
+    border: 2px solid var(--gold);
+    margin: 0 auto; /* INI YANG BIKIN CENTER */
 }
 
 .testimonial-video-wrapper {
@@ -1233,15 +1241,13 @@ body {
 }
 
 .testimonial-slider {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.testi-item { 
-    background: var(--dark-card); 
-    padding: 25px; 
-    border-radius: 20px; 
-    border: 1px solid rgba(255,255,255,0.05); 
-    display: none;
+.testi-item * {
+    text-align: center;
 }
 
 .testi-item.active {
@@ -1268,11 +1274,21 @@ body {
     font-size: 0.95rem;
 }
 
+.testimonials .section-title {
+    text-align: center;
+}
+
+.testimonials .sub-title {
+    text-align: center;
+}
+
 .client-info { 
     display: flex; 
-    align-items: center; 
+    flex-direction: column; /* BIKIN JADI KE TENGAH */
+    align-items: center; /* CENTER */
     gap: 12px; 
     margin-top: 15px; 
+    text-align: center; /* TAMBAHAN */
 }
 
 .client-info img { 
