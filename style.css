@@ -1149,14 +1149,21 @@ body {
     position: relative; 
     border-radius: 12px; 
     border: 2px solid var(--gold);
-    margin: 0 auto; /* INI YANG BIKIN CENTER */
+    margin: 0 auto;
+    
+    /* Gunakan width 100% agar di HP dia selebar layar (minus padding container) */
+    width: 100%; 
+    
+    /* Batasi lebarnya di laptop/layar besar agar tidak terlalu raksasa */
+    max-width: 800px; 
 }
 
 .testimonial-video-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
     height: 0;
     overflow: hidden;
+    border-radius: 10px 10px 0 0; /* Menyesuaikan border-radius container */
 }
 
 .testimonial-video-wrapper video { 
@@ -1195,10 +1202,13 @@ body {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
+    .video-container {
+        max-width: 100%; /* Full di HP */
+    }
+    
     .custom-video-controls {
-        flex-direction: row;
-        align-items: center;
+        padding: 10px; /* Perkecil padding di HP agar hemat ruang */
     }
 }
 
@@ -1333,6 +1343,12 @@ body {
     background: var(--gold); 
     width: 25px; 
     border-radius: 10px; 
+}
+
+@media (min-width: 768px) {
+    .video-container {
+        width: 90%; /* Memberi sedikit ruang napas di samping */
+    }
 }
 
 /* CONTACT */
